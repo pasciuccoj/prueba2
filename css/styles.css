@@ -1,0 +1,361 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #282829;
+    font-family: 'Roboto', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #a52121;
+    gap: 18px;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+}
+
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-around;
+    }   
+}
+
+img {
+    max-width: 100%;
+}
+
+.header__logo {
+    width: 80px;
+}
+
+.menu-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* pseudoclases */
+.menu-nav li a:hover {
+    color: yellow;
+    background-color: #282829;
+    border-radius: 10px;
+    padding: 10px;
+}
+.menu-nav li a:active {
+    color:#a52121
+}
+/* link visitado
+.menu-nav li a:visited {
+    color:green;
+} */
+
+/* link no visitado */
+/* .menu-nav li a:link {
+    color:blue;
+}
+ */
+
+@media (min-width: 500px) {
+    .menu-nav {
+        flex-direction: row;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin: 30px 0;
+    color: #fff;
+}
+
+.menu-nav li a {
+    color: white;
+    font-weight: 700;
+}
+
+/*BANNER*/
+.banner {
+    background-image: url('../img/codigo1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*EFECTO PARALLAX*/
+    background-attachment: fixed;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner h1 {
+    background-color: rgba(234, 234, 234, .5);
+    color: black;
+}
+
+/*CARDS*/
+.padre-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+@media (min-width: 768px) {
+    .padre-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        gap: 30px;
+    }
+}
+
+@media (min-width: 992px) {
+    .padre-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+.card {
+    width: 18rem;
+    -webkit-box-shadow: 0px 0px 17px 0px rgba(255,255,255,1);
+    -moz-box-shadow: 0px 0px 17px 0px rgba(255,255,255,1);
+    box-shadow: 0px 0px 17px 0px rgba(255,255,255,1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.card h4, .card p {
+    color: #fff;
+}
+
+.card button {
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+/*NERDS Y FOOTER*/
+.nerds {
+    display: block;
+    margin: 0 auto;
+}
+
+footer {
+    background-color: rgb(234,234,234);
+    margin-top: 40px;
+    padding: 30px;
+    text-align: center;
+}
+
+.padre-redes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .padre-redes {
+        flex-direction: column;
+        position: fixed;
+        top: 40%;
+        right: 2%;
+    }
+
+    .titulo-redes {
+        display: none;
+    }
+}
+
+.redes {
+    width: 35px;
+}
+
+
+/* page: pseudoclases */
+
+/* not: :last-of-type | :first-of-type | :nth */
+
+/* todos los li menos(not) el último */
+
+.pseudolista li:not(:last-of-type) {
+    background-color:#a52121;
+    margin-bottom: 15px;
+}
+
+/* nth
+:nth-child(x) | numero de elemento
+:nth-odd | impares
+:nth-even | pares
+*/
+
+.otra-lista li:nth-child(2){
+    background-color: pink;
+}
+
+.otra-lista li:nth-child(odd){
+    background-color: orange;
+}
+
+
+
+/* carrito */
+
+#carrito-completo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    margin: 20px 0px;
+}
+
+.item-carrito {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+    width: 100%;
+    
+}
+
+.item-carrito img {
+    width: 150px;
+}
+
+
+.item-carrito:nth-child(even) {
+    background-color: grey;
+
+}
+
+
+
+/* filtro productos */
+
+.container-labels {
+    display: flex; 
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+
+}
+
+.container-labels label {
+    cursor: pointer; 
+    padding: 8px 15px; 
+
+}
+
+.container-labels label:nth-child(odd){
+    background-color: #a52121;
+}
+
+#remeras, #pcs, #todos {
+    display: none; 
+}
+
+.remeras, .pcs {
+    display:none; 
+}
+
+#remeras:checked ~ .padre-cards .remeras, #pcs:checked ~ .padre-cards .pcs {
+    display: flex;
+
+}
+
+#todos:checked ~ .padre-cards .remeras, #todos:checked ~ .padre-cards .pcs {
+    display: flex;
+}
+
+
+
+
+
+
+/* Metodología BEM 
+
+Modificador de Bloques de Elementos (Block Element Modifier)
+
+Sugiere una manera estructurada de nombrar clases, basada en las propiedades
+del elemento. Modulariza los bloques de código dispuestos. Se centra en::after
+- bloques(contenedores) div | section | article | ul | ol 
+- elmentos(hijos) a | button | li | span | etc
+- modificadores: estilo para un elemento puntual
+
+
+syntax
+
+header__logo (doble guion bajo)
+
+para nombrar los elementos de bem, va primero el nombre del bloque (header)
+
+modificador: nombrePadre__nombreElemento--modificador
+
+doble guión medio ej: padre-cards__card--oferta
+
+*/
+
+
+
+/* atajos
+crtl + d : selecciona todos los elementos iguales
+alt + click: selecciona varias lineas a la vez
+
+*/
+
+
+
+/* bootstrap */
+
+.padre-banners {
+    margin: 0 auto; /* centrado de items */
+}
+
+.hijo-banners {
+    text-align: center; /* centrado de texto */
+}
+
+
+/* navbar que ocupe toda la pantalla */
+
+header nav {
+    width: 100%;
+    margin: auto 25px;
+}
+
+/* carrousel */
+
+.carrousel-item img{
+    height: 500px;
+}
+
+@media (min-width: 768px){
+    #carouselExample{
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .carousel-item{
+        height: 500px;
+    }
+}
